@@ -36,22 +36,29 @@ class Member:
 class Student(Member):
     def __init__(self, full_name, reason):
         super().__init__(full_name)
-        self.name = full_name
         self.reason = reason
+
+class Instructor(Member):
+    def __init__(self, full_name, bio, skills = [None]):
+        super().__init__(full_name)
+        self.bio = bio
 
 
 # workshop = Workshop("12/03/2014", "Shutl")
 
 jane = Student("Jane Doe", "I am trying to learn programming and need some help")
-# lena = Student("Lena Smith", "I am really excited about learning to program!")
+lena = Student("Lena Smith", "I am really excited about learning to program!")
 
 print(jane.introduce())
 print(jane.reason)
 
-# vicky = Instructor("Vicky Python", "I want to help people learn coding.")
+print(lena.introduce())
+
+vicky = Instructor("Vicky Python", "I want to help people learn coding.")
 # vicky.add_skill("HTML")
 # vicky.add_skill("JavaScript")
 
+print(vicky.introduce())
 
 # nicole = Instructor("Nicole McMillan", "I have been programming for 5 years in Python and want to spread the love")
 # nicole.add_skill("Python")
