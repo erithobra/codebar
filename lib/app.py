@@ -6,14 +6,13 @@
             # * full_name
         # * methods:
             # * introduce
-    # create childClass Student
-        #properties:
-            #reason
-        #methods:
-    # create childClass Instructor
-        #properties:
-            #bio
-            #skills
+    # * create childClass Student
+        # * properties:
+            # * reason
+    # * create childClass Instructor
+        # * properties:
+            # * bio
+            # * skills
         #methods:
             #add_skill
 #Part II: Workshops
@@ -42,7 +41,9 @@ class Instructor(Member):
     def __init__(self, full_name, bio, skills = [None]):
         super().__init__(full_name)
         self.bio = bio
-
+        self.skills = []
+    def add_skill(self, skill):
+        self.skills.append(skill)
 
 # workshop = Workshop("12/03/2014", "Shutl")
 
@@ -55,14 +56,17 @@ print(jane.reason)
 print(lena.introduce())
 
 vicky = Instructor("Vicky Python", "I want to help people learn coding.")
-# vicky.add_skill("HTML")
-# vicky.add_skill("JavaScript")
+vicky.add_skill("HTML")
+vicky.add_skill("JavaScript")
 
 print(vicky.introduce())
+print(vicky.skills)
 
-# nicole = Instructor("Nicole McMillan", "I have been programming for 5 years in Python and want to spread the love")
-# nicole.add_skill("Python")
+nicole = Instructor("Nicole McMillan", "I have been programming for 5 years in Python and want to spread the love")
+nicole.add_skill("Python")
 
+print(nicole.introduce())
+print(nicole.skills)
 
 # workshop.add_participant(jane)
 # workshop.add_participant(lena)
