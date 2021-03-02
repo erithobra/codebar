@@ -33,15 +33,20 @@ class Member:
     def introduce(self):
         return f"Hi, my name is {self.name}!"
 
-jane = Member("Jane Doe")
+class Student(Member):
+    def __init__(self, full_name, reason):
+        super().__init__(full_name)
+        self.name = full_name
+        self.reason = reason
 
-print(jane.introduce())
 
 # workshop = Workshop("12/03/2014", "Shutl")
 
-# jane = Student("Jane Doe", "I am trying to learn programming and need some help")
+jane = Student("Jane Doe", "I am trying to learn programming and need some help")
 # lena = Student("Lena Smith", "I am really excited about learning to program!")
 
+print(jane.introduce())
+print(jane.reason)
 
 # vicky = Instructor("Vicky Python", "I want to help people learn coding.")
 # vicky.add_skill("HTML")
