@@ -45,7 +45,20 @@ class Instructor(Member):
     def add_skill(self, skill):
         self.skills.append(skill)
 
-# workshop = Workshop("12/03/2014", "Shutl")
+######### PART II ############
+
+class Workshop:
+    def __init__(self, date, subject):
+        self.date = date
+        self.subject = subject
+        self.instructors = []
+        self.students = []
+
+
+workshop = Workshop("12/03/2014", "Shutl")
+
+print(workshop.date)
+print(workshop.subject)
 
 jane = Student("Jane Doe", "I am trying to learn programming and need some help")
 lena = Student("Lena Smith", "I am really excited about learning to program!")
