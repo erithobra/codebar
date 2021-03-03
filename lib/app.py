@@ -63,9 +63,14 @@ class Workshop:
         print(f"Workshop - {self.date} - {self.subject}")
         print()
         print("Students")
-        print(len(self.students))
         for i in range(0, len(self.students)):
             print(f"{i+1}. {self.students[i].name} - {self.students[i].reason}")
+        print()
+        print("Instructors")
+        for i in range(0, len(self.instructors)):
+            print(f"{i+1}. {self.instructors[i].name} - {self.instructors[i].skills}")
+            print(f"   {self.instructors[i].bio}")
+        print()
 
 
 workshop = Workshop("12/03/2014", "Shutl")
@@ -81,9 +86,9 @@ nicole = Instructor("Nicole McMillan", "I have been programming for 5 years in P
 nicole.add_skill("Python")
 
 workshop.add_participant(jane)
-# workshop.add_participant(lena)
-# workshop.add_participant(vicky)
-# workshop.add_participant(nicole)
+workshop.add_participant(lena)
+workshop.add_participant(vicky)
+workshop.add_participant(nicole)
 
 
 
