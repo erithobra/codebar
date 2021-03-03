@@ -1,30 +1,4 @@
 # Write your code here!
-
-#PSEUDOCODE
-    # * create a Member class with attributes:
-        # * properties:
-            # * full_name
-        # * methods:
-            # * introduce
-    # * create childClass Student
-        # * properties:
-            # * reason
-    # * create childClass Instructor
-        # * properties:
-            # * bio
-            # * skills
-        #methods:
-            #add_skill
-#Part II: Workshops
-    # create a Workshop class
-        #properties:
-            #date
-            #subject
-            #instructors
-            #students
-        #methods:
-            #add_participant
-            #print_details
     
 class Member:
     def __init__(self, full_name):
@@ -68,9 +42,11 @@ class Workshop:
         print()
         print("Instructors")
         for i in range(0, len(self.instructors)):
-            print(f"{i+1}. {self.instructors[i].name} - {self.instructors[i].skills}")
+            str1 = ", " #join solution for formatting found at: https://www.geeksforgeeks.org/python-program-to-convert-a-list-to-string/
+            print(f"{i+1}. {self.instructors[i].name} - {str1.join(self.instructors[i].skills)}")
             print(f"   {self.instructors[i].bio}")
         print()
+
 
 
 workshop = Workshop("12/03/2014", "Shutl")
@@ -90,8 +66,6 @@ workshop.add_participant(lena)
 workshop.add_participant(vicky)
 workshop.add_participant(nicole)
 
-
-
 workshop.print_details()
 
 
@@ -108,3 +82,31 @@ workshop.print_details()
 # 2. Nicole McMillan - Ruby
 #    I have been programming for 5 years in Ruby and want to spread the love
 #
+
+
+
+#PSEUDOCODE
+    # * create a Member class with attributes:
+        # * properties:
+            # * full_name
+        # * methods:
+            # * introduce
+    # * create childClass Student
+        # * properties:
+            # * reason
+    # * create childClass Instructor
+        # * properties:
+            # * bio
+            # * skills
+        # * methods:
+            # * add_skill
+# * Part II: Workshops
+    # * create a Workshop class
+        # * properties:
+            # * date
+            # * subject
+            # * instructors
+            # * students
+        # * methods:
+            # * add_participant
+            # * print_details
