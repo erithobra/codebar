@@ -53,41 +53,41 @@ class Workshop:
         self.subject = subject
         self.instructors = []
         self.students = []
+    def add_participant(self, name):
+        if (name.__class__.__name__) == "Student":
+            self.students.append(name)
+        else:
+            self.instructors.append(name)
+    def print_details(self):
+        print()
+        print(f"Workshop - {self.date} - {self.subject}")
+        print()
+        print("Students")
+        print(len(self.students))
+        for i in range(0, len(self.students)):
+            print(f"{i+1}. {self.students[i].name} - {self.students[i].reason}")
 
 
 workshop = Workshop("12/03/2014", "Shutl")
 
-print(workshop.date)
-print(workshop.subject)
-
 jane = Student("Jane Doe", "I am trying to learn programming and need some help")
 lena = Student("Lena Smith", "I am really excited about learning to program!")
-
-print(jane.introduce())
-print(jane.reason)
-
-print(lena.introduce())
 
 vicky = Instructor("Vicky Python", "I want to help people learn coding.")
 vicky.add_skill("HTML")
 vicky.add_skill("JavaScript")
 
-print(vicky.introduce())
-print(vicky.skills)
-
 nicole = Instructor("Nicole McMillan", "I have been programming for 5 years in Python and want to spread the love")
 nicole.add_skill("Python")
 
-print(nicole.introduce())
-print(nicole.skills)
-
-# workshop.add_participant(jane)
+workshop.add_participant(jane)
 # workshop.add_participant(lena)
 # workshop.add_participant(vicky)
 # workshop.add_participant(nicole)
 
 
-# workshop.print_details()
+
+workshop.print_details()
 
 
 # =>
